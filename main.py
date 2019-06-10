@@ -1,7 +1,7 @@
 """
 Usage Instructions:
     mf:
-        --datasource=ml --logdir=logs/mf/ --metatrain_iterations=70000  --update_batch_size=200
+        --datasource=bpr_time --sub_source=netflix --logdir=logs/netlfix/ --metatrain_iterations=20000
 """
 import os
 from datetime import datetime
@@ -62,7 +62,7 @@ flags.DEFINE_bool('resume', False, 'whether resume model')
 flags.DEFINE_integer('resume_iter', 20000, 'resume the model from this iter')
 flags.DEFINE_string('load_dir',
                     '10_shot_mtype_bpr_time.mbs_20.ubs_300.meta_lr_0.007.update_step_10.'
-                    'update_lr_0.005.lambda_lr_1.0.avg_f_True.time_2019-05-18 23:50:06.991271',
+                    'update_lr_0.005.lambda_lr_1.0.avg_f_True.time',
                     'where to load model')
 
 
@@ -237,18 +237,18 @@ def test(model, saver, sess, exp_string, data_generator, resume_itr):
 
     if FLAGS.k_shot == 1:
         test_models = {
-            '10_shot_mtype_bpr_time.mbs_20.ubs_300.meta_lr_0.007.update_step_10.'
-            'update_lr_0.005.lambda_lr_1.0.avg_f_True.time_2019-05-18 23:50:06.991271': 15500
+            '1_shot_mtype_bpr_time.mbs_20.ubs_300.meta_lr_0.007.update_step_10.'
+            'update_lr_0.005.lambda_lr_1.0.avg_f_True': 15500
         }
     elif FLAGS.k_shot == 5:
         test_models = {
-            '1_shot_mtype_bpr_time.mbs_20.ubs_300.meta_lr_0.01.'
-            'update_step_10.update_lr_0.01.lambda_lr_1.0.avg_f_True.time_2019-05-19 11:09:16.215915': 20000
+            '5_shot_mtype_bpr_time.mbs_20.ubs_300.meta_lr_0.01.'
+            'update_step_10.update_lr_0.01.lambda_lr_1.0.avg_f_True': 20000
         }
     elif FLAGS.k_shot == 10:
         test_models = {
-            '1_shot_mtype_bpr_time.mbs_20.ubs_300.meta_lr_0.01.'
-            'update_step_10.update_lr_0.01.lambda_lr_1.0.avg_f_True.time_2019-05-19 11:09:16.215915': 20000
+            '10_shot_mtype_bpr_time.mbs_20.ubs_300.meta_lr_0.01.'
+            'update_step_10.update_lr_0.01.lambda_lr_1.0.avg_f_True': 20000
         }
     else:
         raise Exception('no models for {} shot'.format(FLAGS.k_shot))

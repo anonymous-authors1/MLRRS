@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019/3/26 16:44
-# @Author  : Duocai Wu
-
-
 """ Code for loading data. """
 import numpy as np
 from tensorflow.python.platform import flags

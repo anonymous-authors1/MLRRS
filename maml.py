@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Time    : 2019/3/26 20:39
-# @Author  : Duocai Wu
-
 """ Code for the MAML algorithm and network definitions. """
 from __future__ import print_function
 
